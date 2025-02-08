@@ -10,6 +10,7 @@ application:
   subdomain: gokapi
   routes:
     - /=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842
+    - /setup=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842/setup
   ingress:
     - protocol: tcp
       port: 53842

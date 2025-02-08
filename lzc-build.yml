@@ -40,14 +40,10 @@ icon: ./logo.png
 # 如果 dependencies 和 build 同时存在，将会优先使用 dependencies
 devshell:
   routes:
-    - /=http://127.0.0.1:53842
-  dependencies:
-    - nodejs
-    - npm
+    - /=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842
+    - /setup=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842/setup
   # setupscript 每次进入到app container后都会执行的配置脚本
   # - 可以为脚本的路径地址
   # - 如果构建命令简单，也可以直接写 sh 的命令
   # setupscript: export GOPROXY=https://goproxy.cn
   # setupscript: ./setupscript.sh
-  setupscript: |
-    export npm_config_registry=https://registry.npmmirror.com
