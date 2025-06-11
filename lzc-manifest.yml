@@ -1,7 +1,7 @@
 lzc-sdk-version: 0.1
 name: gokapi
 package: cloud.lazycat.app.gokapi
-version: 0.0.1
+version: 2.0.1
 description: 
 license: https://choosealicense.com/licenses/mit/
 homepage: 
@@ -9,20 +9,15 @@ author:
 application:
   subdomain: gokapi
   routes:
-    - /=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842
-    - /setup=http://gokapi.cloud.lazycat.app.gokapi.lzcapp:53842/setup
-  ingress:
-    - protocol: tcp
-      port: 53842
-      service: gokapi
+    - /=http://gokapi:53842
   background_task: true
 
 services:
   gokapi:
-    image: registry.lazycat.cloud/czyt/f0rc3/gokapi:8491074e73af38d8
+    image: docker.1ms.run/f0rc3/gokapi:v2.0.1
     binds:
-      - /lzcapp/var/gokapi/data:/app/data 
-      - /lzcapp/var/gokapi/config:/app/config
+      - /lzcapp/var/data:/app/data 
+      - /lzcapp/var/config:/app/config
     environment:
       - TZ=UTC
       - GOKAPI_DATA_DIR=/app/data

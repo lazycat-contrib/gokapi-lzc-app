@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 dist
-*.lpk
 
 # local env files
 .env.local
