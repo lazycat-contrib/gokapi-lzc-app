@@ -1,0 +1,199 @@
+# Gokapi 应用部署参数配置
+# 参数 ID 使用小写加下划线格式，提供更好的可读性
+
+params:
+  # ============================================
+  # 必填参数：时区配置
+  # ============================================
+  - id: timezone
+    type: string
+    name: "timezone"
+    description: "Timezone for the application (e.g., UTC, Asia/Shanghai, Europe/Berlin)"
+    default_value: "Asia/Shanghai"
+    optional: false
+    placeholder: "UTC"
+
+  # ============================================
+  # 可选参数：AWS S3 存储配置
+  # ============================================
+  - id: aws_bucket
+    type: string
+    name: "aws s3 bucket"
+    description: "AWS S3 bucket name for file storage (optional)"
+    default_value: ""
+    optional: true
+    placeholder: "my-gokapi-bucket"
+
+  - id: aws_region
+    type: string
+    name: "aws region"
+    description: "AWS S3 region (e.g., us-east-1, ap-northeast-1)"
+    default_value: ""
+    optional: true
+    placeholder: "us-east-1"
+
+  - id: aws_key
+    type: string
+    name: "aws access key"
+    description: "AWS access key ID for S3 authentication"
+    default_value: ""
+    optional: true
+    placeholder: "AKIAIOSFODNN7EXAMPLE"
+
+  - id: aws_key_secret
+    type: password
+    name: "aws secret key"
+    description: "AWS secret access key for S3 authentication"
+    default_value: ""
+    optional: true
+    placeholder: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+
+  - id: aws_endpoint
+    type: string
+    name: "aws s3 endpoint"
+    description: "Custom S3 endpoint URL (for S3-compatible services)"
+    default_value: ""
+    optional: true
+    placeholder: "https://s3.example.com"
+
+  # ============================================
+  # 可选参数：ID 长度配置
+  # ============================================
+  - id: length_id
+    type: number
+    name: "file id length"
+    description: "Length of generated file IDs"
+    default_value: 15
+    optional: true
+    min: 10
+    max: 50
+
+  - id: length_hotlink_id
+    type: number
+    name: "hotlink id length"
+    description: "Length of generated hotlink IDs"
+    default_value: 40
+    optional: true
+    min: 20
+    max: 100
+
+  # ============================================
+  # 可选参数：分块和上传配置
+  # ============================================
+  - id: chunk_size_mb
+    type: number
+    name: "chunk size (mb)"
+    description: "Size of upload chunks in megabytes"
+    default_value: 45
+    optional: true
+    min: 1
+    max: 500
+
+  - id: max_filesize
+    type: number
+    name: "max file size (mb)"
+    description: "Maximum file size allowed for upload in megabytes"
+    default_value: 102400
+    optional: true
+    min: 1
+    max: 1048576
+
+  - id: max_memory_upload
+    type: number
+    name: "max memory upload (mb)"
+    description: "Maximum memory used for upload processing in megabytes"
+    default_value: 50
+    optional: true
+    min: 10
+    max: 1024
+
+  - id: max_parallel_uploads
+    type: number
+    name: "max parallel uploads"
+    description: "Maximum number of parallel uploads allowed"
+    default_value: 3
+    optional: true
+    min: 1
+    max: 20
+
+  # ============================================
+  # 可选参数：其他功能标志
+  # ============================================
+  - id: disable_cors_check
+    type: bool
+    name: "disable cors check"
+    description: "Disable CORS (Cross-Origin Resource Sharing) security check"
+    default_value: true
+    optional: true
+
+  - id: enable_hotlink_videos
+    type: bool
+    name: "enable hotlink videos"
+    description: "Enable video hotlinking functionality"
+    default_value: false
+    optional: true
+
+# ============================================
+# 多语言支持：中文翻译
+# ============================================
+locales:
+  zh:
+    timezone:
+      name: "时区"
+      description: "应用程序时区（例如：UTC、Asia/Shanghai、Europe/Berlin）"
+
+    aws_bucket:
+      name: "AWS S3 存储桶"
+      description: "用于文件存储的 AWS S3 存储桶名称（可选）"
+
+    aws_region:
+      name: "AWS 区域"
+      description: "AWS S3 区域（例如：us-east-1、ap-northeast-1）"
+
+    aws_key:
+      name: "AWS 访问密钥"
+      description: "用于 S3 身份验证的 AWS 访问密钥 ID"
+
+    aws_key_secret:
+      name: "AWS 密钥"
+      description: "用于 S3 身份验证的 AWS 密钥访问密钥"
+
+    aws_endpoint:
+      name: "S3 端点地址"
+      description: "自定义 S3 端点 URL（用于 S3 兼容服务）"
+
+    length_id:
+      name: "文件 ID 长度"
+      description: "生成的文件 ID 长度"
+
+    length_hotlink_id:
+      name: "热链接 ID 长度"
+      description: "生成的热链接 ID 长度"
+
+    chunk_size_mb:
+      name: "分块大小 (MB)"
+      description: "上传文件分块大小（MB）"
+
+    max_filesize:
+      name: "最大文件大小 (MB)"
+      description: "允许上传的最大文件大小（MB）"
+
+    max_memory_upload:
+      name: "最大内存占用 (MB)"
+      description: "上传处理使用的最大内存（MB）"
+
+    max_parallel_uploads:
+      name: "最大并行上传数"
+      description: "允许的最大并行上传数量"
+
+    disable_cors_check:
+      name: "禁用 CORS 检查"
+      description: "禁用跨域资源共享（CORS）安全检查"
+
+    log_stdout:
+      name: "日志输出到控制台"
+      description: "将日志输出到标准输出而不是文件"
+
+    enable_hotlink_videos:
+      name: "启用视频热链接"
+      description: "启用视频热链接功能"
