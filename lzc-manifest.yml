@@ -29,13 +29,6 @@ services:
       - GOKAPI_CONFIG_DIR=/app/config
       - GOKAPI_PORT=53842
 
-      # AWS S3 配置（可选）
-      - GOKAPI_AWS_BUCKET={{.U.aws_bucket}}
-      - GOKAPI_AWS_REGION={{.U.aws_region}}
-      - GOKAPI_AWS_KEY={{.U.aws_key}}
-      - GOKAPI_AWS_KEY_SECRET={{.U.aws_key_secret}}
-      - GOKAPI_AWS_ENDPOINT={{.U.aws_endpoint}}
-
       # ID 长度配置
       - GOKAPI_LENGTH_ID={{.U.length_id}}
       - GOKAPI_LENGTH_HOTLINK_ID={{.U.length_hotlink_id}}
@@ -48,7 +41,6 @@ services:
 
       # 其他标志
       - GOKAPI_DISABLE_CORS_CHECK={{.U.disable_cors_check}}
-      - GOKAPI_LOG_STDOUT={{.U.log_stdout}}
       - GOKAPI_ENABLE_HOTLINK_VIDEOS={{.U.enable_hotlink_videos}}
 
 locales:

@@ -14,49 +14,6 @@ params:
     placeholder: "UTC"
 
   # ============================================
-  # 可选参数：AWS S3 存储配置
-  # ============================================
-  - id: aws_bucket
-    type: string
-    name: "aws s3 bucket"
-    description: "AWS S3 bucket name for file storage (optional)"
-    default_value: ""
-    optional: true
-    placeholder: "my-gokapi-bucket"
-
-  - id: aws_region
-    type: string
-    name: "aws region"
-    description: "AWS S3 region (e.g., us-east-1, ap-northeast-1)"
-    default_value: ""
-    optional: true
-    placeholder: "us-east-1"
-
-  - id: aws_key
-    type: string
-    name: "aws access key"
-    description: "AWS access key ID for S3 authentication"
-    default_value: ""
-    optional: true
-    placeholder: "AKIAIOSFODNN7EXAMPLE"
-
-  - id: aws_key_secret
-    type: password
-    name: "aws secret key"
-    description: "AWS secret access key for S3 authentication"
-    default_value: ""
-    optional: true
-    placeholder: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-
-  - id: aws_endpoint
-    type: string
-    name: "aws s3 endpoint"
-    description: "Custom S3 endpoint URL (for S3-compatible services)"
-    default_value: ""
-    optional: true
-    placeholder: "https://s3.example.com"
-
-  # ============================================
   # 可选参数：ID 长度配置
   # ============================================
   - id: length_id
@@ -142,26 +99,6 @@ locales:
       name: "时区"
       description: "应用程序时区（例如：UTC、Asia/Shanghai、Europe/Berlin）"
 
-    aws_bucket:
-      name: "AWS S3 存储桶"
-      description: "用于文件存储的 AWS S3 存储桶名称（可选）"
-
-    aws_region:
-      name: "AWS 区域"
-      description: "AWS S3 区域（例如：us-east-1、ap-northeast-1）"
-
-    aws_key:
-      name: "AWS 访问密钥"
-      description: "用于 S3 身份验证的 AWS 访问密钥 ID"
-
-    aws_key_secret:
-      name: "AWS 密钥"
-      description: "用于 S3 身份验证的 AWS 密钥访问密钥"
-
-    aws_endpoint:
-      name: "S3 端点地址"
-      description: "自定义 S3 端点 URL（用于 S3 兼容服务）"
-
     length_id:
       name: "文件 ID 长度"
       description: "生成的文件 ID 长度"
@@ -189,10 +126,6 @@ locales:
     disable_cors_check:
       name: "禁用 CORS 检查"
       description: "禁用跨域资源共享（CORS）安全检查"
-
-    log_stdout:
-      name: "日志输出到控制台"
-      description: "将日志输出到标准输出而不是文件"
 
     enable_hotlink_videos:
       name: "启用视频热链接"
