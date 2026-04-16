@@ -1,12 +1,3 @@
-name: gokapi
-package: community.lazycat.app.gokapi
-version: 2.2.4
-min_os_version: 1.3.8
-description: "Lightweight, self-hosted file sharing server with AWS S3 support and customizable upload settings"
-license: https://choosealicense.com/licenses/mit/
-homepage: https://github.com/Forceu/Gokapi
-author: Forceu
-
 application:
   subdomain: gokapi
   public_path:
@@ -15,6 +6,13 @@ application:
     - location: /
       backend: http://gokapi:53842/
   background_task: false
+  entries:
+    - id: main
+      title: "Gokapi"
+      path: /
+    - id: admin
+      title: "Admin"
+      path: /admin
 
 services:
   gokapi:
@@ -42,11 +40,3 @@ services:
       # 其他标志
       - GOKAPI_DISABLE_CORS_CHECK={{.U.disable_cors_check}}
       - GOKAPI_ENABLE_HOTLINK_VIDEOS={{.U.enable_hotlink_videos}}
-
-locales:
-  en:
-    name: "Gokapi"
-    description: "Lightweight, self-hosted file sharing server with AWS S3 support and customizable upload settings"
-  zh:
-    name: "Gokapi"
-    description: "轻量级自托管文件分享服务器，支持 AWS S3 存储和自定义上传配置"

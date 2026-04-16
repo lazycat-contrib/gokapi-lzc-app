@@ -11,67 +11,54 @@ params:
     description: "Timezone for the application (e.g., UTC, Asia/Shanghai, Europe/Berlin)"
     default_value: "Asia/Shanghai"
     optional: false
-    placeholder: "UTC"
 
   # ============================================
   # 可选参数：ID 长度配置
   # ============================================
   - id: length_id
-    type: number
+    type: string
     name: "file id length"
-    description: "Length of generated file IDs"
-    default_value: 15
+    description: "Length of generated file IDs (10-50, default 15)"
+    default_value: "15"
     optional: true
-    min: 10
-    max: 50
 
   - id: length_hotlink_id
-    type: number
+    type: string
     name: "hotlink id length"
-    description: "Length of generated hotlink IDs"
-    default_value: 40
+    description: "Length of generated hotlink IDs (20-100, default 40)"
+    default_value: "40"
     optional: true
-    min: 20
-    max: 100
 
   # ============================================
   # 可选参数：分块和上传配置
   # ============================================
   - id: chunk_size_mb
-    type: number
+    type: string
     name: "chunk size (mb)"
-    description: "Size of upload chunks in megabytes"
-    default_value: 45
+    description: "Size of upload chunks in megabytes (1-500, default 45)"
+    default_value: "45"
     optional: true
-    min: 1
-    max: 500
 
   - id: max_filesize
-    type: number
+    type: string
     name: "max file size (mb)"
-    description: "Maximum file size allowed for upload in megabytes"
-    default_value: 102400
+    description: "Maximum file size allowed for upload in megabytes (1-1048576, default 102400)"
+    default_value: "102400"
     optional: true
-    min: 1
-    max: 1048576
 
   - id: max_memory_upload
-    type: number
+    type: string
     name: "max memory upload (mb)"
-    description: "Maximum memory used for upload processing in megabytes"
-    default_value: 50
+    description: "Maximum memory used for upload processing in megabytes (10-1024, default 50)"
+    default_value: "50"
     optional: true
-    min: 10
-    max: 1024
 
   - id: max_parallel_uploads
-    type: number
+    type: string
     name: "max parallel uploads"
-    description: "Maximum number of parallel uploads allowed"
-    default_value: 3
+    description: "Maximum number of parallel uploads allowed (1-20, default 3)"
+    default_value: "3"
     optional: true
-    min: 1
-    max: 20
 
   # ============================================
   # 可选参数：其他功能标志
@@ -101,27 +88,27 @@ locales:
 
     length_id:
       name: "文件 ID 长度"
-      description: "生成的文件 ID 长度"
+      description: "生成的文件 ID 长度（10-50，默认 15）"
 
     length_hotlink_id:
       name: "热链接 ID 长度"
-      description: "生成的热链接 ID 长度"
+      description: "生成的热链接 ID 长度（20-100，默认 40）"
 
     chunk_size_mb:
       name: "分块大小 (MB)"
-      description: "上传文件分块大小（MB）"
+      description: "上传文件分块大小（1-500，默认 45）"
 
     max_filesize:
       name: "最大文件大小 (MB)"
-      description: "允许上传的最大文件大小（MB）"
+      description: "允许上传的最大文件大小（1-1048576，默认 102400）"
 
     max_memory_upload:
       name: "最大内存占用 (MB)"
-      description: "上传处理使用的最大内存（MB）"
+      description: "上传处理使用的最大内存（10-1024，默认 50）"
 
     max_parallel_uploads:
       name: "最大并行上传数"
-      description: "允许的最大并行上传数量"
+      description: "允许的最大并行上传数量（1-20，默认 3）"
 
     disable_cors_check:
       name: "禁用 CORS 检查"

@@ -1,0 +1,20 @@
+package: community.lazycat.app.gokapi
+version: 2.2.4
+name: Gokapi
+description: "Lightweight, self-hosted file sharing server with AWS S3 support and customizable upload settings"
+min_os_version: 1.5.0
+license: https://choosealicense.com/licenses/mit/
+homepage: https://github.com/Forceu/Gokapi
+author: Forceu
+
+locales:
+  en:
+    name: "Gokapi"
+    description: "Lightweight, self-hosted file sharing server with AWS S3 support and customizable upload settings"
+    entries.main.title: "Gokapi"
+    entries.admin.title: "Admin"
+  zh:
+    name: "Gokapi"
+    description: "轻量级自托管文件分享服务器，支持 AWS S3 存储和自定义上传配置"
+    entries.main.title: "Gokapi"
+    entries.admin.title: "管理后台"
