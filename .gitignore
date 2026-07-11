@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 dist
+.lazycat-action/
+*.lpk
 
 # local env files
 .env.local

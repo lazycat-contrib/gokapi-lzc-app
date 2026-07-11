@@ -1,0 +1,36 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/gokapi.lpk
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: gokapi
+
+build:
+  run_buildscript: false
+
+images:
+  - id: gokapi
+    target: service
+    service: gokapi
+    source: f0rc3/gokapi
+    channel: stable
+    tag_regex: '^v?[0-9]+\.[0-9]+\.[0-9]+$'
+    delivery:
+      mode: direct
+
+stores:
+  official:
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Gokapi
+    summary: 轻量级自托管文件分享服务器

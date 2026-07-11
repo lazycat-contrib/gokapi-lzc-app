@@ -7,6 +7,12 @@
 
 **Gokapi** is a simple, self-hosted file sharing server with automatic expiration and encryption support — ideal for teams or individuals who want privacy, control, and no clutter.
 
+## LazyCat automatic publishing
+
+The workflow checks stable `f0rc3/gokapi` images every day at 23:00 UTC, uses the upstream image directly, creates a versioned `<package-id>-v<version>.lpk` GitHub Release, and synchronizes only to the MiaoMiao private store.
+
+Configure `APPSTORE_URL` and `APPSTORE_TOKEN` as GitHub Secrets. `APP_ID` and `PRIVATE_STORE_GROUP_CODES` are optional. Organization Secrets must authorize this repository.
+
 ### Available for:
 
 - **Bare Metal** (Linux/macOS/Windows)
