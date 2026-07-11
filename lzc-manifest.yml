@@ -13,10 +13,10 @@ application:
     - id: admin
       title: "Admin"
       path: /admin
-
 services:
   gokapi:
-    image: docker.1ms.run/f0rc3/gokapi:v2.2.4
+    # upstream: f0rc3/gokapi:v2.2.4
+    image: f0rc3/gokapi:v2.2.4
     binds:
       - /lzcapp/var/data:/app/data
       - /lzcapp/var/config:/app/config
@@ -26,17 +26,14 @@ services:
       - GOKAPI_DATA_DIR=/app/data
       - GOKAPI_CONFIG_DIR=/app/config
       - GOKAPI_PORT=53842
-
       # ID 长度配置
       - GOKAPI_LENGTH_ID={{.U.length_id}}
       - GOKAPI_LENGTH_HOTLINK_ID={{.U.length_hotlink_id}}
-
       # 分块和上传配置
       - GOKAPI_CHUNK_SIZE_MB={{.U.chunk_size_mb}}
       - GOKAPI_MAX_FILESIZE={{.U.max_filesize}}
       - GOKAPI_MAX_MEMORY_UPLOAD={{.U.max_memory_upload}}
       - GOKAPI_MAX_PARALLEL_UPLOADS={{.U.max_parallel_uploads}}
-
       # 其他标志
       - GOKAPI_DISABLE_CORS_CHECK={{.U.disable_cors_check}}
       - GOKAPI_ENABLE_HOTLINK_VIDEOS={{.U.enable_hotlink_videos}}
